@@ -9,7 +9,8 @@
     "clean": "rm -r ./lib && mkdir ./lib",
     "build": "npm run build:firebolt && npm run build:app",
     "build:firebolt": "npm run clean && babel node_modules/@firebolt-js/sdk/dist/lib/ --out-dir lib",
-    "build:app": "webpack --config webpack.config.js"
+    "build:app": "webpack --config webpack.config.js",
+    "serve": "npm run build && lite-server --baseDir='./build'"
   },
   "author": {
     "name": "Jeremy LaCivita",
@@ -18,7 +19,7 @@
   },
   "license": "UNLICENSED",
   "dependencies": {
-    "@firebolt-js/sdk": "^0.7.0"
+    "@firebolt-js/sdk": "^1.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.17.10",
@@ -27,6 +28,7 @@
     "babel-plugin-module-extension": "^0.1.3",
     "file-loader": "^6.2.0",
     "webpack": "^5.75.0",
-    "webpack-cli": "^4.10.0"
+    "webpack-cli": "^4.10.0",
+    "lite-server": "^2.6.1"
   }
 }

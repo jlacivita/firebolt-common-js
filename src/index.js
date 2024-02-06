@@ -1,8 +1,9 @@
 require('file-loader?name=[name].[ext]!./index.html');
 
-const { Lifecycle } = require('../lib/firebolt')
+const { Lifecycle, Device } = require('../lib/firebolt')
 
 console.log('Sample ES5 Firebolt App')
+console.dir(Device.version())
 
 Lifecycle.listen( (event, data) => {
     console.log(event)
